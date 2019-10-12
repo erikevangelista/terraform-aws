@@ -484,10 +484,6 @@ resource "aws_launch_configuration" "wp_lc" {
 
 #ASG
 
-#resource "random_id" "rand_asg" {
-# byte_length = 8
-#}
-
 resource "aws_autoscaling_group" "wp_asg" {
   name                      = "asg-${aws_launch_configuration.wp_lc.id}"
   max_size                  = "${var.asg_max}"
